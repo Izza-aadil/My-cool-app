@@ -50,7 +50,7 @@ function convertTemperature() {
   }
 }
 
-let weatherUnitToggle = document.querySelector("#weather-unit-toggle a");
+let weatherUnitToggle = document.querySelector("#weather-unit-toggle");
 weatherUnitToggle.addEventListener("click", convertTemperature);
 function realTemperature(response) {
   let h1 = document.querySelector("h1");
@@ -90,5 +90,5 @@ function getPositionWeather(position) {
 function searchLocation() {
   navigator.geolocation.getCurrentPosition(getPositionWeather);
 }
-let button = document.querySelector("button");
+let button = document.querySelector(".location-btn");
 button.addEventListener("click", searchLocation);

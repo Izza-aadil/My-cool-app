@@ -1,26 +1,27 @@
 input {
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
 }
 h1 {
-  font-family: Inv Maison Neue;
-
   text-align: center;
-  line-height: 70px;
+  line-height: 20px;
   color: rgb(89, 98, 117);
-  font-style: bold;
 }
 h2 {
+  display: inline;
+  border: none;
   text-align: center;
-  line-height: 145px;
-  font-size: 90px;
-  margin-left: 95px;
+  line-height: 106px;
+  font-size: 55px;
+  margin-left: 15px;
 }
 h3 {
-  text-align: center;
+  text-align: right;
   margin-top: 15px;
   font-size: 70px;
   color: #596275;
+  position: relative;
+  left: 23px;
 }
 p {
   text-align: center;
@@ -29,24 +30,55 @@ p {
   color: #5c6dcb;
 }
 button {
-  width: 100%;
-  background-color: #cedaf5;
-  border: solid #a8abad;
+  float: right;
+}
+button:hover {
+  background: rgba(256, 256, 256, 0.2);
+}
+button img {
+  width: 20px;
+  height: 20px;
 }
 
 .city {
   height: 70px;
-  border: solid;
+  border: hidden;
   border-color: rgb(89, 105, 202);
 }
 .search {
   padding: 0;
 }
+.search input {
+  background: transparent;
+  border-bottom: solid 1px gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 20px;
+  height: 30px;
+  transition: all 0.5s ease;
+  color: transparent;
+}
+.search label {
+  position: relative;
+  left: -22px;
+}
+.search input:focus {
+  width: 80%;
+  outline: none;
+  color: rgb(89, 98, 117);
+}
 .detail {
-  border: solid;
+  border: hidden;
   border-color: #42a5f5;
   margin-top: 15px;
-  height: 175px;
+  height: 115px;
+}
+.main-temp {
+  padding-right: 0;
+}
+.main-icon {
+  padding-left: 0;
 }
 .data {
   font-size: 28px;
@@ -83,8 +115,7 @@ button {
 .temp {
   text-align: center;
   margin-left: 5px;
-  color: #a2a8b5;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(89, 98, 117);
 }
 .wed {
   margin-left: 15px;
@@ -93,8 +124,17 @@ button {
   margin-left: 15px;
 }
 .container {
-  border: solid;
-  border-color: #2080cc;
+  font-family: "Noto Sans TC", sans-serif;
+  border: hidden;
+  border-radius: 5px;
+  border-width: 10px;
+  border-color: rgba(219, 185, 209, 0.589);
+  background: radial-gradient(
+    circle at center,
+    rgb(224, 211, 218) 0,
+    rgba(243, 184, 233, 0.582),
+    rgb(173, 162, 172) 100%
+  );
 
   max-width: 80%;
   padding-right: 30px;

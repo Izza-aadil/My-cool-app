@@ -1,33 +1,45 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Weather App</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
         <link rel="stylesheet" href="src/styles.css">
-        <script src="src/index.js"> </script>
     </head>
 
     <body>
         <div class="container">
             </br>
             <div class="row">
-                <div class="search col-9">
-                    <form id="search-engine">
-                        <input id="city-input" class="col-12" type="text" placeholder="Enter city here 🔍 " />
+                <div class="search col-6">
+                    <form id="search-engine" autocomplete="off">
+                        <input id="city-input" type="text" />
+                        <label for="city-input">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd"
+                                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            </svg>
+                        </label>
                     </form>
 
                 </div>
-                <div class="col-3">
-                    <button>
-                        Current Location
+                <div class="col-6">
+                    <button id="weather-unit-toggle" class="btn">
+                        C | F
+                    </button>
+                    <button class="btn location-btn">
+                        <img src="static/location-pin.png" />
                     </button>
                 </div>
             </div>
@@ -42,25 +54,27 @@
             </div>
 
             <div class="detail row">
-                <div class=" col-5">
+                <div class="col-6 main-temp">
+                    <h3>
+                        <span class="weather-value">23</span>°
+                    </h3>
+                    
+                </div>
+                <div class="col-6 main-icon">
                     <h2>
                         ⛅
                     </h2>
-
+                
                 </div>
-                <div class="col-7">
-                    <h3>
-                        <span class="weather-value">23</span>°<span class="weather-unit">C</span>
-                    </h3>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
                     <p id="date-real">
-                        Sunday 16:09 </p>
-
-
+                        Sunday 16:09
+                    </p>
                     <p>
                         feels like <span class="weather-value">22</span>°<span class="weather-unit">C</span>
-                    </p>
-                    <p id="weather-unit-toggle">
-                        <a href="#">Celsius/Fahrenheit</a>
                     </p>
                 </div>
             </div>
@@ -124,6 +138,7 @@
 
 
         </div>
+        <script src="src/index.js"> </script>
     </body>
 
     </html>
