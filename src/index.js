@@ -37,16 +37,22 @@ function fahrenheitToCelsius(value) {
 function convertTemperature() {
   let units = document.querySelectorAll(".weather-unit");
   let values = document.querySelectorAll(".weather-value");
+  let fButton = document.querySelector(".fahrenheit-button");
+  let cButton = document.querySelector(".celsius-button");
   if (units[0].innerHTML === "C") {
     values.forEach(
       (value) => (value.innerHTML = celsiusToFahrenheit(value.innerHTML))
     );
     units.forEach((unit) => (unit.innerHTML = "F"));
+    cButton.classList.remove("selected-unit");
+    fButton.classList.add("selected-unit");
   } else {
     values.forEach(
       (value) => (value.innerHTML = fahrenheitToCelsius(value.innerHTML))
     );
     units.forEach((unit) => (unit.innerHTML = "C"));
+    cButton.classList.add("selected-unit");
+    fButton.classList.remove("selected-unit");
   }
 }
 
@@ -58,7 +64,29 @@ function realTemperature(response) {
   let h3 = document.querySelectorAll(".weather-value");
   h3[0].innerHTML = Math.round(response.data.main.temp);
   h3[1].innerHTML = Math.round(response.data.main.feels_like);
+  let iconElement = document.querySelector("#icon img");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let weatherDescription = document.querySelector("#description");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+  let realhumidity = document.querySelector(".humidity");
+  realhumidity.innerHTML = response.data.main.humidity;
+  let realMinTemp = document.querySelector(".min-temp");
+  realMinTemp.innerHTML = Math.round(response.data.main.temp_min);
+  let realMaxTemp = document.querySelector(".max-temp");
+  realMaxTemp.innerHTML = Math.round(response.data.main.temp_max);
+  let realWind = document.querySelector(".wind");
+  realWind.innerHTML = Math.round(response.data.wind.speed);
 }
+
+function getDefaultCity() {
+  axios
+    .get(`${apiUrl}?q=Paris&appid=${apiKey}&units=metric`)
+    .then(realTemperature);
+}
+
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#city-input");
@@ -67,6 +95,7 @@ function searchCity(event) {
   if (currentUnit.innerHTML === "C") {
     unit = "metric";
   }
+
   axios
     .get(`${apiUrl}?q=${input.value}&appid=${apiKey}&units=${unit}`)
     .then(realTemperature);
@@ -92,3 +121,6 @@ function searchLocation() {
 }
 let button = document.querySelector(".location-btn");
 button.addEventListener("click", searchLocation);
+
+// On page load
+getDefaultCity();

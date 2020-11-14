@@ -27,7 +27,7 @@ p {
   text-align: center;
   line-height: 5px;
   margin-top: 5px;
-  color: #5c6dcb;
+  color: grey;
 }
 button {
   float: right;
@@ -90,11 +90,7 @@ button img {
 .number {
   text-align: right;
 }
-.info {
-  border: solid;
-  border-color: #71bbf7;
-  margin-top: 10px;
-}
+
 .forecast {
   border: solid;
   border-color: #596275;
@@ -146,4 +142,18 @@ button img {
 #weather-unit-toggle {
   text-align: right;
   font-size: 15px;
+}
+#description {
+  text-transform: capitalize;
+}
+.feels {
+  text-transform: capitalize;
+}
+.info p {
+  line-height: 25px;
+  margin-top: 20px;
+}
+.selected-unit {
+  font-weight: bolder;
+  text-decoration: underline;
 }
