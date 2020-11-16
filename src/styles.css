@@ -4,8 +4,8 @@ input {
 }
 h1 {
   text-align: center;
-  line-height: 20px;
-  color: rgb(89, 98, 117);
+  line-height: 60px;
+  color: rgb(49, 56, 71);
 }
 h2 {
   display: inline;
@@ -121,18 +121,9 @@ button img {
 }
 .container {
   font-family: "Noto Sans TC", sans-serif;
-  border: hidden;
-  border-radius: 5px;
-  border-width: 10px;
-  border-color: rgba(219, 185, 209, 0.589);
-  background: radial-gradient(
-    circle at center,
-    rgb(224, 211, 218) 0,
-    rgba(243, 184, 233, 0.582),
-    rgb(173, 162, 172) 100%
-  );
 
-  max-width: 80%;
+  background-image: url(https://desenio.co.uk/bilder/artiklar/zoom/8195_2.jpg?imgwidth=435&qt=Fashionable%20posters%20with%20clouds);
+  max-width: 40%;
   padding-right: 30px;
   padding-left: 30px;
   padding-bottom: 30px;
