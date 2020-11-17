@@ -39,7 +39,15 @@ button img {
   width: 20px;
   height: 20px;
 }
-
+a {
+  color: #596275;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 30px;
+}
+.foot {
+  font-size: 15px;
+}
 .city {
   height: 70px;
   border: hidden;
@@ -121,6 +129,7 @@ button img {
 }
 .container {
   font-family: "Noto Sans TC", sans-serif;
+  border-radius: 7px;
 
   background-image: url(https://desenio.co.uk/bilder/artiklar/zoom/8195_2.jpg?imgwidth=435&qt=Fashionable%20posters%20with%20clouds);
   max-width: 40%;
