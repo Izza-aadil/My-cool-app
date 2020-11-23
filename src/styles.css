@@ -132,12 +132,15 @@ a {
   border-radius: 7px;
 
   background-image: url(https://desenio.co.uk/bilder/artiklar/zoom/8195_2.jpg?imgwidth=435&qt=Fashionable%20posters%20with%20clouds);
-  max-width: 40%;
+  max-width: 50%;
   padding-right: 30px;
   padding-left: 30px;
   padding-bottom: 30px;
   margin-top: 20px;
   width: auto;
+  background-repeat: no-repeat;
+
+  background-size: 100%;
 }
 #weather-unit-toggle {
   text-align: right;
